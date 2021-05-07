@@ -38,12 +38,26 @@ var studenti = [
 
 // ciclare su tutti gli studenti e stampare per ogniuno di essi nome e cognome
 
-var sectionEl = document.getElementById("lista");
 
-for( var key in studenti){
-    console.log(studenti[key]);
-    sectionEl.insertAdjacentHTML('beforeend',
-     `
-        <p> ${key}: ${studenti[key]} </p>
-    `)
+//opzione 1:
+/* var sectionEl = document.getElementById("lista");
+
+for(var i = 0; i < studenti.length; i++){
+
+    var classe = studenti[i];
+
+    for( var key in classe){
+        console.log(classe[key]);
+        sectionEl.insertAdjacentHTML('beforeend',
+        `
+            <p> ${key}: ${classe[key]} </p>
+        `)
+    }
+}     */
+
+//opzione 2:
+
+for( var key  in studenti){
+    var fullName = `${studenti[key].nome}  ${studenti[key].cognome}`
+    document.getElementById('lista').innerHTML += fullName;
 }
