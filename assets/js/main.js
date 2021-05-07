@@ -18,23 +18,43 @@ for( var key in studente){
 
 var studenti = [
     {
-        nome: "filippo",
-        cognome:"rossi",
+        nome: "Filippo",
+        cognome:"Rossi",
         eta: 25
     },
 
     {
-        nome:"marco",
-        cognome:"sieni",
+        nome:"Marco",
+        cognome:"Sieni",
         eta: 34
     },
 
     {
-        nome:"federico",
-        cognome:"biaggio",
+        nome:"Federico",
+        cognome:"Biaggio",
         eta: 35
     }
 ];
+
+
+//Dare la possibilità all’utente, attraverso 3 prompt(),
+//di aggiungere un nuovo oggetto studente inserendo nell’ordine:
+//nome, cognome e età.
+
+
+var nome = prompt("Inseriscio il tuo nome!");
+var cognome = prompt("Inseriscio il tuo cogome!");    
+var eta = Number(prompt("Inseriscio la tua eta!"));
+
+var dati = {
+    nome,
+    cognome,
+    eta
+}
+
+studenti.push(dati);
+
+
 
 // ciclare su tutti gli studenti e stampare per ogniuno di essi nome e cognome
 
@@ -59,5 +79,7 @@ for(var i = 0; i < studenti.length; i++){
 
 for( var key  in studenti){
     var fullName = `${studenti[key].nome}  ${studenti[key].cognome}`
-    document.getElementById('lista').innerHTML += fullName;
+    document.getElementById('lista').innerHTML += fullName + '<br>';
 }
+
+console.log(studenti);
